@@ -1,0 +1,27 @@
+name: Mausam Kumar
+
+education:
+  degree: MSc
+  field: Physics
+  institution: St. Joseph’s University, Bengaluru
+  thesis_title: Predicting baroclinic velocity components using GANs
+  thesis_keywords:
+    - geophysical fluid dynamics
+    - baroclinic instability
+    - generative adversarial networks
+
+research_interests:
+  - physics-informed machine learning
+  - climate modeling
+  - turbulence
+
+skills:
+  - python
+  - numpy
+  - pytorch
+  - Deep learning
+
+preferences:
+  countries: Germany, Switzerland, Netherlands, Sweden, Denmark, Norway, Finland, Austria
+  relocation: willing
+  stipend_min_eur: "1800"

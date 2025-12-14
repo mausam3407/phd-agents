@@ -5,6 +5,7 @@ from graph.state import AgentState
 from agents.profile_agent import ProfileAgent
 from agents.matching_agent import MatchingAgent
 from schemas.position import PhDPosition
+from agents.search_agent import SearchAgent
 
 
 # -------------------------
@@ -56,4 +57,20 @@ def match_positions_node(state: AgentState) -> AgentState:
     ]
 
     state.current_step = "positions_matched"
+    return state
+
+
+def search_positions_node(state: AgentState) -> AgentState:
+    """
+    Discovers PhD positions using SearchAgent.
+    """
+    if state.profile is None:
+        state.errors.append("Profile not loaded before search")
+        return state
+
+    agent = SearchAgent()
+    positions = agent.discover(state.profile)
+
+    state.discovered_positions = positions
+    state.current_step = "positions_discovered"
     return state

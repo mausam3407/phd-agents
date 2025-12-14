@@ -67,6 +67,11 @@ class AgentState(BaseModel):
     errors: List[str] = Field(default_factory=list)
     approved: bool = False
 
+    # Routing / control
+    search_attempts: int = 0
+    max_search_attempts: int = 2
+    min_match_score: float = 0.5
+
     # Metadata (safe for debugging / logging)
     metadata: Dict[str, Any] = Field(default_factory=dict)
 

@@ -74,3 +74,19 @@ def search_positions_node(state: AgentState) -> AgentState:
     state.discovered_positions = positions
     state.current_step = "positions_discovered"
     return state
+
+def refine_search_node(state: AgentState) -> AgentState:
+    """
+    Refines search queries after a failed attempt.
+    """
+    state.search_attempts += 1
+
+    # Simple refinement strategy: relax constraints
+    state.metadata["search_refinement"] = f"attempt_{state.search_attempts}"
+
+    # Clear previous search results
+    state.discovered_positions = []
+    state.matched_positions = []
+
+    state.current_step = "search_refined"
+    return state

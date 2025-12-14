@@ -2,8 +2,8 @@ from pathlib import Path
 import yaml
 from typing import List
 
-from src.schemas.profile import Profile, Education
-from src.tools.pdf import extract_text_from_pdf
+from schemas.profile import Profile, Education
+from tools.pdf import extract_text_from_pdf
 
 
 class ProfileAgent:
